@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Step 1</h1>
+    <p>Click the correct "Next" button to proceed.</p>
+    <a class="btn" href="#">Next</a>
+    <a class="btn" href="#">Next</a>
+    <a class="btn" href="#">Next</a>
+    <p>Hint: The correct button is the third one from the left.</p>
+    
+    <script>
+        let attempts = 0;
+        document.querySelectorAll('.btn').forEach((button, index) => {
+            button.addEventListener('click', (e) => {
+                attempts++;
+                e.preventDefault();
+                if (index === 2 && attempts >= 3) {
+                    window.location.href = '/step2';
+                } else {
+                    alert('Try again!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

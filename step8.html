@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Step 8</h1>
+    <p>Solve this final challenge: What three positive numbers give the same answer when multiplied and added together?</p>
+    <input type="text" id="answer" placeholder="Your answer (comma separated)">
+    <button class="btn" onclick="checkAnswer()">Submit</button>
+    <p id="message"></p>
+
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.split(',').map(Number);
+            const message = document.getElementById('message');
+            if (userAnswer.length === 3 && userAnswer[0] + userAnswer[1] + userAnswer[2] === userAnswer[0] * userAnswer[1] * userAnswer[2] && userAnswer[0] > 0 && userAnswer[1] > 0 && userAnswer[2] > 0) {
+                window.location.href = '/win';
+            } else {
+                message.textContent = 'Try again!';
+            }
+        }
+    </script>
+</body>
+</html>

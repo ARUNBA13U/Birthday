@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Step 6</h1>
+    <p>Solve this riddle: I speak without a mouth and hear without ears. I have nobody, but I come alive with wind. What am I?</p>
+    <input type="text" id="answer" placeholder="Your answer">
+    <button class="btn" onclick="checkAnswer()">Submit</button>
+    <p id="message"></p>
+
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.toLowerCase();
+            const message = document.getElementById('message');
+            if (userAnswer == 'echo') {
+                window.location.href = '/step7';
+            } else {
+                message.textContent = 'Try again!';
+            }
+        }
+    </script>
+</body>
+</html>

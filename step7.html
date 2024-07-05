@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 7</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .hidden-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Step 7</h1>
+    <p>Click the "Next" button to proceed.</p>
+    <a class="btn" href="#">Next</a>
+    <a class="btn" href="#">Next</a>
+    <a class="btn" href="#">Next</a>
+    <a class="btn" href="#">Next</a>
+    <a class="btn hidden-btn" href="/step8">Next</a>
+    <p>Hint: Look for a hidden button!</p>
+    
+    <script>
+        document.querySelectorAll('.btn').forEach((button, index) => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (index === 4) {
+                    document.querySelector('.hidden-btn').style.display = 'inline-block';
+                } else {
+                    alert('Try again!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
